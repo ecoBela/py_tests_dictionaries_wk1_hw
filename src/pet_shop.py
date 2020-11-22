@@ -10,3 +10,6 @@ def add_or_remove_cash(dictionary, number):
 
 def get_pets_sold(dictionary):
     return dictionary["admin"]["pets_sold"]
+
+def increase_pets_sold(dictionary, number):
+    dictionary["admin"]["pets_sold"] += number
