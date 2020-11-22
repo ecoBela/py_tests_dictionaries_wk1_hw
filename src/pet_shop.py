@@ -23,3 +23,8 @@ def get_pets_by_breed(dictionary, breed):
         if pet["breed"] == breed:
             no_of_pets.append(pet)
     return no_of_pets
+
+def find_pet_by_name(dictionary, name):
+    for pet in dictionary["pets"]:
+        if pet["name"] == name:
+            return pet
