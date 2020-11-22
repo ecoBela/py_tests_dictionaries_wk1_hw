@@ -1,41 +1,41 @@
 # WRITE YOUR FUNCTIONS HERE
-def get_pet_shop_name(dictionary):
-    return dictionary["name"]
+def get_pet_shop_name(pet_shop):
+    return pet_shop["name"]
 
-def get_total_cash(dictionary):
-    return dictionary["admin"]["total_cash"]
+def get_total_cash(pet_shop):
+    return pet_shop["admin"]["total_cash"]
 
-def add_or_remove_cash(dictionary, number):
-    dictionary["admin"]["total_cash"] += number
+def add_or_remove_cash(pet_shop, cash):
+    pet_shop["admin"]["total_cash"] += cash
 
-def get_pets_sold(dictionary):
-    return dictionary["admin"]["pets_sold"]
+def get_pets_sold(pet_shop):
+    return pet_shop["admin"]["pets_sold"]
 
-def increase_pets_sold(dictionary, number):
-    dictionary["admin"]["pets_sold"] += number
+def increase_pets_sold(pet_shop, number):
+    pet_shop["admin"]["pets_sold"] += number
 
-def get_stock_count(dictionary):
-    return len(dictionary["pets"])
+def get_stock_count(pet_shop):
+    return len(pet_shop["pets"])
 
-def get_pets_by_breed(dictionary, breed):
+def get_pets_by_breed(pet_shop, breed):
     no_of_pets = []
-    for pet in dictionary["pets"]:
+    for pet in pet_shop["pets"]:
         if pet["breed"] == breed:
             no_of_pets.append(pet)
     return no_of_pets
 
-def find_pet_by_name(dictionary, name):
-    for pet in dictionary["pets"]:
+def find_pet_by_name(pet_shop, name):
+    for pet in pet_shop["pets"]:
         if pet["name"] == name:
             return pet
 
-def remove_pet_by_name(dictionary, name):
-    for pet in dictionary["pets"]:
+def remove_pet_by_name(pet_shop, name):
+    for pet in pet_shop["pets"]:
         if pet["name"] == name:
-            dictionary["pets"].remove(pet)
+            pet_shop["pets"].remove(pet)
             
-def add_pet_to_stock(stocklist, new_pet):
-    stocklist["pets"].append("new_pet")
+def add_pet_to_stock(pet_shop, new_pet):
+    pet_shop["pets"].append("new_pet")
 
 def get_customer_cash(customers_list):
     return customers_list["cash"]
@@ -52,3 +52,7 @@ def add_pet_to_customer(customers_list, new_pet):
 def customer_can_afford_pet(customers_list, new_pet):
     if customers_list["cash"] >= new_pet["price"]:
         return True
+
+# def customer_cannot_afford_pet(customers_list, new_pet):
+#     if customers_list["cash"] < new_pet["price"]:
+#         return False
